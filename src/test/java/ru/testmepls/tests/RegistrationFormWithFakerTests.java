@@ -1,5 +1,7 @@
 package ru.testmepls.tests;
 
+import io.qameta.allure.*;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import ru.testmepls.pages.RegistrationFormPage;
 
@@ -10,10 +12,17 @@ public class RegistrationFormWithFakerTests extends TestBase {
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
 
     @Test
+    @Feature("Practice form test")
+    @Story("Form testing")
+    @Owner("Ucsus")
+    @Severity(SeverityLevel.BLOCKER)
+    @Link(value = "Jenkins", url = "https://jenkins.autotests.cloud/job/simple_test_jenkins/")
+    @DisplayName("Fill practice form test")
     void fillPracticeFormTest() {
         step("Open registration form", () -> {
             registrationFormPage.openPage();
         });
+
         step("Fill form", () -> {
             registrationFormPage
                     .setFirstName(firstName)
