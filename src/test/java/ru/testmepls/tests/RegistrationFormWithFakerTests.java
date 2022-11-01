@@ -9,7 +9,7 @@ import static io.qameta.allure.Allure.step;
 import static ru.testmepls.tests.TestData.*;
 
 public class RegistrationFormWithFakerTests extends TestBase {
-    RegistrationFormPage registrationFormPage = new RegistrationFormPage();
+    private final RegistrationFormPage registrationFormPage = new RegistrationFormPage();
 
     @Test
     @Feature("Practice form test")
