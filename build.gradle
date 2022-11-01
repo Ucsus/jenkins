@@ -63,7 +63,3 @@ task hello(type: Test) {
         includeTags "hello"
     }
 }
-
-test {
-    useJUnitPlatform()
-}
