@@ -18,6 +18,7 @@ public class RegistrationFormWithFakerTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @Link(value = "Jenkins", url = "https://jenkins.autotests.cloud/job/simple_test_jenkins/")
     @DisplayName("Fill practice form test")
+
     void fillPracticeFormTest() {
         step("Open registration form", () -> {
             registrationFormPage.openPage();
@@ -39,6 +40,7 @@ public class RegistrationFormWithFakerTests extends TestBase {
                     .setCity(city)
                     .clickSubmit();
         });
+        System.out.println("");
 
         step("Check form results", () -> {
             registrationFormPage.checkResultsTableVisible()
