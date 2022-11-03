@@ -1,20 +1,17 @@
 plugins {
-    id 'java'
+    id 'java-library'
     id 'io.qameta.allure' version '2.11.0'
-}
-
-repositories {
-    mavenCentral()
 }
 
 def allureVersion = "2.19.0",
     slf4jVersion = "1.7.32"
 
+
 allure {
     report {
         version.set(allureVersion)
     }
-    adapter { // отвечает за появление папочки build/allure-results
+    adapter { // отвечает за появление build/allure-results
         aspectjWeaver.set(true) //обработка аннотации @Step
         frameworks {
             junit5 { //название фреймворка
@@ -23,20 +20,22 @@ allure {
         }
     }
 }
-
-dependencies {
-    testImplementation(
-            "com.codeborne:selenide:6.9.0",
-            "io.qameta.allure:allure-selenide:$allureVersion",
-            "org.junit.jupiter:junit-jupiter:5.9.1",
-            "org.slf4j:slf4j-simple:$slf4jVersion",
-            "com.github.javafaker:javafaker:1.0.2"
-    )
+repositories {
+    mavenCentral()
 }
 
+dependencies {
+    testImplementation (
+            "com.codeborne:selenide:6.7.4",
+            "com.github.javafaker:javafaker:1.0.2",
+            "org.junit.jupiter:junit-jupiter:5.9.0",
+            "io.qameta.allure:allure-selenide:$allureVersion",
+            "org.slf4j:slf4j-simple:$slf4jVersion"
+    )
+}
 tasks.withType(Test) {
-    systemProperties(System.getProperties())
     useJUnitPlatform()
+    systemProperties(System.getProperties())
 
     testLogging {
         lifecycle {
@@ -48,6 +47,5 @@ tasks.withType(Test) {
 
 test {
     useJUnitPlatform()
-    systemProperties(System.getProperties())
 
 }

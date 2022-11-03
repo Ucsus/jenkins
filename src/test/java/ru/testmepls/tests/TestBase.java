@@ -11,23 +11,24 @@ import ru.testmepls.helpers.Attach;
 public class TestBase {
 
     @BeforeAll
-    static void configure() {
+    static void setUp() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+
         Configuration.baseUrl = "https://demoqa.com";
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("enableVNC", true);
-        capabilities.setCapability("enableVideo", true);
+        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserVersion = System.getProperty("browserVersion", "100");
+        Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
 
-        Configuration.browser = System.getProperty("browser");
-        Configuration.browserVersion = System.getProperty("browserVersion");
-        Configuration.browserSize = System.getProperty("browserSize");
-        if(System.getProperty("remote") != null) {
-            Configuration.remote = System.getProperty("remote");
+        String remoteUrl = System.getProperty("remote");
+        if (remoteUrl != null) {
+            Configuration.remote = remoteUrl;
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.setCapability("enableVNC", true);
+            capabilities.setCapability("enableVideo", true);
+            Configuration.browserCapabilities = capabilities;
         }
-        Configuration.browserCapabilities = capabilities;
-
-        //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
     }
+
 
     @AfterEach
     void addAttachments() {
