@@ -12,7 +12,7 @@ public class TestData {
             email = faker.internet().emailAddress(),
             year = String.valueOf(faker.number().numberBetween(1990, 2005)),
             month = RandomUtils.getRandomMonth(),
-            birthday = RandomUtils.generateDay(),
+            birthday = String.valueOf(faker.number().numberBetween(1, 28)),
             phoneNumber = faker.phoneNumber().subscriberNumber(10),
             gender = faker.demographic().sex(),
             subject = RandomUtils.getRandomSubject(),

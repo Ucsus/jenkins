@@ -1,21 +1,10 @@
 package ru.testmepls.utils;
 
-import java.time.LocalDate;
-import java.time.Period;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
 public class RandomUtils {
-    private static final String randomDate =
-            LocalDate.now().minus(Period.ofDays((new Random().nextInt(365 * 70)))).toString();
-    public static String generateDay() {
-
-        LocalDate localDate = LocalDate.parse(randomDate);
-
-        return String.valueOf(localDate.getDayOfMonth());
-
-    }
     public static String getRandomMonth() {
         List<String> months = Arrays.asList(
                 "January", "February", "March", "April",
