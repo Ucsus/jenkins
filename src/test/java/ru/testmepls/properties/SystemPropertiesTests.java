@@ -12,9 +12,9 @@ public class SystemPropertiesTests {
 
     @Test
     void simplePropertyTest1() {
-        System.setProperty("browser", "opera");
+        System.setProperty("browser", "chrome");
         String browserName = System.getProperty("browser");
-        System.out.println(browserName); // opera
+        System.out.println(browserName); // chrome
     }
 
     @Test
@@ -25,9 +25,9 @@ public class SystemPropertiesTests {
 
     @Test
     void simplePropertyTest3() {
-        System.setProperty("browser", "opera");
+        System.setProperty("browser", "chrome");
         String browserName = System.getProperty("browser", "firefox");
-        System.out.println(browserName); // opera
+        System.out.println(browserName); // chrome
     }
 
     @Test
