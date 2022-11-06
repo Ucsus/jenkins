@@ -2,6 +2,7 @@ package ru.testmepls.tests;
 
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import ru.testmepls.pages.RegistrationFormPage;
 
@@ -12,6 +13,7 @@ public class RegistrationFormWithFakerTests extends TestBase {
     private final RegistrationFormPage registrationFormPage = new RegistrationFormPage();
 
     @Test
+    @Tag("fillform")
     @Feature("Practice form test")
     @Story("Form testing")
     @Owner("Ucsus")
