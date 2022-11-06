@@ -26,19 +26,19 @@ repositories {
 
 dependencies {
     testImplementation(
-            'com.codeborne:selenide:6.9.0',
+            'com.codeborne:selenide:6.7.4',
             'org.junit.jupiter:junit-jupiter:5.9.0',
-            'org.slf4j:slf4j-simple:2.0.3',
+            'org.slf4j:slf4j-simple:2.0.0',
             'org.assertj:assertj-core:3.23.1',
             'io.qameta.allure:allure-selenide:2.19.0',
-            'org.projectlombok:lombok:1.18.24',
+            'org.projectlombok:lombok:1.18.22',
             'com.github.javafaker:javafaker:1.0.2')
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
 
 tasks.withType(Test) {
     useJUnitPlatform()
-//    systemProperties(System.getProperties())
+    systemProperties(System.getProperties())
 
     testLogging {
         lifecycle {
