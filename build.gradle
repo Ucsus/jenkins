@@ -48,6 +48,6 @@ tasks.withType(Test) {
 
 task nofillform(type: Test) {
     useJUnitPlatform {
-        excludeTags("fillform")
+        excludeTags("nofillform")
     }
 }

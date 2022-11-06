@@ -13,7 +13,7 @@ public class RegistrationFormWithFakerTests extends TestBase {
     private final RegistrationFormPage registrationFormPage = new RegistrationFormPage();
 
     @Test
-    @Tag("fillform")
+    @Tag("nofillform")
     @Feature("Practice form test")
     @Story("Form testing")
     @Owner("Ucsus")
