@@ -16,7 +16,7 @@ public class RegistrationFormWithFakerTests extends TestBase {
     @Story("Form testing")
     @Owner("Ucsus")
     @Severity(SeverityLevel.BLOCKER)
-    @Link(value = "Jenkins", url = "https://jenkins.autotests.cloud/job/simple_test_jenkins/")
+    @Link(value = "Jenkins", url = "https://jenkins.autotests.cloud/job/jenkins_properties_2/")
     @DisplayName("Fill practice form test")
 
     void fillPracticeFormTest() {
